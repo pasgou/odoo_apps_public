@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-07 19:52+0000\n"
-"PO-Revision-Date: 2019-08-07 22:07+0200\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2021-08-05 10:32+0200\n"
+"Last-Translator: Pascal GOUHIER <p.gouhier@khetys.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: fr\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__summary
@@ -24,7 +24,7 @@ msgid ""
 " * Check : generate a trial balance.\n"
 " * Uncheck : detail report.\n"
 msgstr ""
-" * Coché : génère un résumé.\n"
+" * Coché : génère une balance.\n"
 " * Décoché : avec détails.\n"
 
 #. module: account_standard_report
@@ -34,9 +34,8 @@ msgid ""
 " * Check this box if you need to report all the debit and the credit sum before the Start Date.\n"
 " * Uncheck this box to report only the balance before the Start Date\n"
 msgstr ""
-" * Coché : affiche le total des écritures avant le début de période dans le report initial.\n"
-" * Décoché : affiche la balance des écritures avant le début de période dans le report initial.\n"
-"\n"
+" * Coché : affiche le détail des à nouveaux.\n"
+" * Décoché : affiche le solde à nouveau sans détail.\n"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__ledger_type
@@ -48,22 +47,22 @@ msgid ""
 " * Open Ledger : Openning journal at Start date\n"
 msgstr ""
 " * Grand livre : Ecritures groupées par compte\n"
-" * Livre des tiers : Ecritures groupées par tiers\n"
-" * Journal : Ecritures groupées par journal\n"
+" * Livre des tiers : Ecritures groupées par tiers, avec seulement les comptes de type recevable/payable\n"
+" * Journal : Ecritures groupées par journal, sans les à nouveaux calculés\n"
 " * Journal d’ouverture : Génère l’édition des à-nouveaux\n"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/wizard/account_standard_report.py:975
 #, python-format
 msgid " Balance"
-msgstr "Balnce"
+msgstr " Solde"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:210
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:416
 #, python-format
 msgid " Totals"
-msgstr "Totals"
+msgstr " Totaux"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:70
@@ -225,32 +224,32 @@ msgstr "Description"
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_standard_ledger_line
 msgid "Account Standard Ledger Line"
-msgstr ""
+msgstr "Ligne Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_standard_ledger_report_object
 msgid "Account Standard Ledger Object"
-msgstr ""
+msgstr "Objet Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_standard_ledger_periode
 msgid "Account Standard Ledger Periode"
-msgstr ""
+msgstr "Période Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_standard_ledger_report
 msgid "Account Standard Ledger Report"
-msgstr ""
+msgstr "Rapport Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_template
 msgid "Account Standard Ledger Template"
-msgstr ""
+msgstr "Modèle Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_account_report_standard_ledger
 msgid "Account Standard Ledger Wizard"
-msgstr ""
+msgstr "Assistant Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_ledger_line_form
@@ -350,23 +349,23 @@ msgstr "Balance"
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 msgid "Compact"
-msgstr ""
+msgstr "Centralisé"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__compact_account
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_template__compact_account
 msgid "Compacte account."
-msgstr ""
+msgstr "Compte centralisé."
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_account__compacted
 msgid "Compacte entries."
-msgstr ""
+msgstr "Écritures centralisées."
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,line_type:0
 msgid "Compacted"
-msgstr ""
+msgstr "Centralisé"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__company_id
@@ -418,7 +417,7 @@ msgstr "Crédit"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__cumul_balance
 msgid "Cumul Balance"
-msgstr ""
+msgstr "Solde cumulé"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_res_currency
@@ -429,19 +428,19 @@ msgstr "Devise"
 #. module: account_standard_report
 #: selection:account.account,type_third_parties:0
 msgid "Customer"
-msgstr ""
+msgstr "Client"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,result_selection:0
 #: selection:account.report.template,result_selection:0
 msgid "Customers"
-msgstr ""
+msgstr "Clients"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,result_selection:0
 #: selection:account.report.template,result_selection:0
 msgid "Customers and Suppliers"
-msgstr ""
+msgstr "Clients et fournisseurs"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:128
@@ -450,7 +449,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 #, python-format
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_periode__date_from
@@ -465,7 +464,7 @@ msgstr "Au"
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_ledger_line_form
 msgid "Dates"
-msgstr ""
+msgstr "Dates"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:368
@@ -511,7 +510,7 @@ msgstr "Au : %s "
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__move_id
 msgid "Entrie"
-msgstr ""
+msgstr "Écriture"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
@@ -526,7 +525,7 @@ msgstr "Edition Excel"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_res_currency__excel_format
 msgid "Excel format"
-msgstr ""
+msgstr "Format Excel"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,account_methode:0
@@ -545,7 +544,7 @@ msgstr "Grand Livre"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__group_by_key
 msgid "Group By Key"
-msgstr ""
+msgstr "Clé de regroupement"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__id
@@ -561,7 +560,7 @@ msgstr "Identifiant"
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 msgid "INIT"
-msgstr ""
+msgstr "INIT"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__account_in_ex_clude_ids
@@ -578,7 +577,7 @@ msgstr "Si vide, tous les partenaires ayant des écritures seront pris"
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_account__compacted
 msgid "If flagged, no details will be displayed in the Standard report, only compacted amounts."
-msgstr ""
+msgstr "Si coché, aucun détail ne sera affiché dans le rapport Standard, mais uniquement les montants centralisés."
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,account_methode:0
@@ -589,28 +588,28 @@ msgstr "Inclure"
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_ledger_line_form
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,view_type:0
 msgid "Init"
-msgstr ""
+msgstr "Init"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,line_type:0
 msgid "Initial"
-msgstr ""
+msgstr "Initial"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__init_balance_history
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_template__init_balance_history
 msgid "Initial balance with history."
-msgstr ""
+msgstr "Solde à nouveau avec historique."
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,line_type:0
 msgid "Init Line"
-msgstr ""
+msgstr "À nouveau"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__amount_currency
@@ -624,14 +623,14 @@ msgstr "Il ajoute la colonne devise sur le rapport si la devise est différente 
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 #, python-format
 msgid "JRNL"
-msgstr ""
+msgstr "JRNL"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,report_type:0
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__journal_id
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report_object__journal_id
 msgid "Journal"
-msgstr ""
+msgstr "Journal"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_ledger_line_form
@@ -705,12 +704,12 @@ msgstr "Ligne"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report__line_super_total_id
 msgid "Line Super Total"
-msgstr ""
+msgstr "Ligne Super Total"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report__line_total_ids
 msgid "Line Total"
-msgstr ""
+msgstr "Ligne Total"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:173
@@ -735,7 +734,7 @@ msgstr "Méthode"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__month_selec
 msgid "Month"
-msgstr ""
+msgstr "Mois"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__move_line_id
@@ -756,12 +755,12 @@ msgstr "Nom"
 #. module: account_standard_report
 #: selection:account.account,type_third_parties:0
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,view_type:0
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:67
@@ -769,17 +768,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 #, python-format
 msgid "Not Due"
-msgstr ""
+msgstr "Non échu"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__current
 msgid "Not due"
-msgstr ""
+msgstr "Non échu"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
 msgid "OPEN TEMPLATES"
-msgstr ""
+msgstr "MODÈLES"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report_object__object_id
@@ -793,7 +792,7 @@ msgstr "Objet"
 #: model_terms:ir.ui.view,arch_db:account_standard_report.report_account_standard_report
 #, python-format
 msgid "Older"
-msgstr ""
+msgstr "Plus ancien"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:52
@@ -812,7 +811,7 @@ msgid ""
 msgstr ""
 "Seulement pour les écritures des comptes de tiers.\n"
 " * Cocher cette case pour voir les écritures lettrées et non lettrées.\n"
-" * Décocher pour voir seulement les écritures réconciliées. Doit être utiliser pour l’édition du livre des tiers.\n"
+" * Décocher pour voir seulement les écritures non lettrées. Peut être utiliser pour l’édition du livre des tiers.\n"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,ledger_type:0
@@ -856,17 +855,17 @@ msgstr "Partenaires"
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__result_selection
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_template__result_selection
 msgid "Partners Selection"
-msgstr ""
+msgstr "Sélection des partenaires"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__partner_ids
 msgid "Partners in report"
-msgstr ""
+msgstr "Partenaires dans le rapport"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__periode_date
 msgid "Periode"
-msgstr ""
+msgstr "Période"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
@@ -876,7 +875,7 @@ msgstr "Impression PDF"
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report__print_time
 msgid "Print Time"
-msgstr ""
+msgstr "Date d'impression"
 
 #. module: account_standard_report
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:44
@@ -902,7 +901,7 @@ msgstr "Réf"
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__report_id
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report_object__report_id
 msgid "Report"
-msgstr ""
+msgstr "Rapport"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__report_name
@@ -915,7 +914,7 @@ msgstr "Nom du rapport"
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__report_object_id
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_report__report_object_ids
 msgid "Report Object"
-msgstr ""
+msgstr "Rapport"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
@@ -930,19 +929,19 @@ msgstr "Type de Rapport"
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
 msgid "SAVE"
-msgstr ""
+msgstr "ENREGISTRER"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__journal_ids
 #: model:ir.model.fields,help:account_standard_report.field_account_report_template__journal_ids
 msgid "Select journal, for the Open Ledger you need to set all journals."
-msgstr "Sélectionner le journal, pour le journal d’ouverture vous devez mettre tous les journaux."
+msgstr "Sélectionner le journal, pour le journal d’ouverture vous devez sélectionner tous les journaux."
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_template_form_view
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_template_tree_view
 msgid "Standard Ledger Template"
-msgstr ""
+msgstr "Modèle Document de Synthèse Comptable"
 
 #. module: account_standard_report
 #: model:ir.actions.act_window,name:account_standard_report.action_account_standard_report
@@ -963,23 +962,23 @@ msgstr "Date de début"
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:46
 #, python-format
 msgid "Start Date : %s "
-msgstr "Période : %s "
+msgstr "Date de début : %s "
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,line_type:0
 msgid "Super Total"
-msgstr ""
+msgstr "Super Total"
 
 #. module: account_standard_report
 #: selection:account.account,type_third_parties:0
 msgid "Supplier"
-msgstr ""
+msgstr "Fournisseur"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger,result_selection:0
 #: selection:account.report.template,result_selection:0
 msgid "Suppliers"
-msgstr ""
+msgstr "Fournisseurs"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__target_move
@@ -991,7 +990,7 @@ msgstr "Pièces Cibles"
 #: code:addons/account_standard_report/report/report_account_standard_excel.py:49
 #, python-format
 msgid "Target Moves:"
-msgstr "Statut des Ecritures:"
+msgstr "Écritures ciblées :"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__template_id
@@ -1002,12 +1001,12 @@ msgstr "Modèle"
 #: code:addons/account_standard_report/wizard/account_standard_report.py:1089
 #, python-format
 msgid "Template of %s"
-msgstr ""
+msgstr "Modèle du %s"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_account__type_third_parties
 msgid "Third Partie"
-msgstr ""
+msgstr "Tiers"
 
 #. module: account_standard_report
 #: selection:account.report.standard.ledger.line,line_type:0
@@ -1019,20 +1018,20 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_standard_report.view_aged_tree
 #, python-format
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__summary
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_template__summary
 msgid "Trial Balance"
-msgstr ""
+msgstr "Balance générale"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger__ledger_type
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__line_type
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_template__ledger_type
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: account_standard_report
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__date_from
@@ -1052,12 +1051,12 @@ msgstr "Calcul si l'écriture est lettrée avec une autre écriture datée aprè
 #: model:ir.model.fields,help:account_standard_report.field_account_report_standard_ledger__company_currency_id
 #: model:ir.model.fields,help:account_standard_report.field_account_report_template__company_currency_id
 msgid "Utility field to express amount currency"
-msgstr "Champ utile pour indiquer le montant de la monnaie"
+msgstr "Champ utile pour indiquer le montant en devise"
 
 #. module: account_standard_report
 #: model_terms:ir.ui.view,arch_db:account_standard_report.account_report_standard_view
 msgid "View Lines"
-msgstr ""
+msgstr "Afficher les lignes"
 
 #. module: account_standard_report
 #: model:ir.model.fields,field_description:account_standard_report.field_account_report_standard_ledger_line__view_type
@@ -1083,14 +1082,14 @@ msgstr "Ecritures lettrées"
 #: code:addons/account_standard_report/wizard/account_standard_report.py:342
 #, python-format
 msgid "Your are not an accountant."
-msgstr ""
+msgstr "Vous n’avez pas le profil comptable."
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_report_account_standard_report_report_account_standard_excel
 msgid "report.account_standard_report.report_account_standard_excel"
-msgstr ""
+msgstr "report.account_standard_report.report_account_standard_excel"
 
 #. module: account_standard_report
 #: model:ir.model,name:account_standard_report.model_report_account_standard_report_report_account_standard_report
 msgid "report.account_standard_report.report_account_standard_report"
-msgstr ""
+msgstr "report.account_standard_report.report_account_standard_report"
